@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# Contact Lister App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple Contact Management application built with React for the frontend and Express.js for the backend. It allows users to add, view, update, and delete contacts.
 
-## Available Scripts
+## Project Structure
 
 In the project directory, you can run:
 
-### `npm start`
+```bash
+/contact-app
+  ├── /backend
+  │   ├── server.js
+  │   ├── /controllers
+  │   │   ├── contactController.js
+  │   ├── /routes
+  │   │   ├── contactRoutes.js
+  │   └── /models
+  │       ├── contactModel.js
+  ├── /frontend
+  │   ├── /public
+  │   │   └── index.html
+  │   ├── /src
+  │   │   ├── /components
+  │   │   │   ├── Contact.js
+  │   │   │   ├── CreateContact.js
+  │   │   │   ├── util.js
+  │   │   ├── App.js
+  │   │   ├── index.css
+  │   │   ├── index.js
+  ├── /node_modules
+  ├── package.json
+  ├── README.md
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
+- Add Contact: Add new contact details including name, phone number, and location.
+- View Contacts: View a list of all contacts.
+- Edit Contact: Edit existing contact details.
+- Delete Contact: Remove a contact from the list.
+- Phone number validation to ensure the correct format.
 
-### `npm test`
+## Installation
+### Prerequisites
+- Node.js and npm installed
+- MySQL database setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+### Frontend
+- React: A JavaScript library for building user interfaces.
+- Material-UI (MUI): A React component library for styling and UI components.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Express.js: A web application framework for Node.js.
+- body-parser: Middleware to parse incoming request bodies.
+- fs: Node.js File System module for file handling.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Frontend Setup
 
-### `npm run eject`
+1. Navigate to the frontend directory:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+cd contact-app
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
 
-## Learn More
+```
+3. Start the React development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
+## Backend Setup
+1. Navigate to the frontend directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+cd backend
+```
 
-### Analyzing the Bundle Size
+2. Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm install
 
-### Making a Progressive Web App
+```
+3. Start the Node.js server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+node server.js
 
-### Advanced Configuration
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Usage
+1. Add a Contact: Fill in the contact details (Name, Phone Number, Location) in the form and click the Add button.
 
-### Deployment
+2. Edit a Contact: Click the Edit icon next to the contact you wish to edit, make the necessary changes, and save.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+3. Delete a Contact: Click the Delete button next to the contact you wish to remove.
 
-### `npm run build` fails to minify
+## API Endpoints
+- POST /api/contacts : Add a new contact.
+- PUT /api/contacts/ : Update an existing contact.
+- DELETE /api/contacts/ : Delete a contact.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Future Enhancements
+Implement user authentication for secure access.
+Use a more robust database (e.g., MySQL, MongoDB) for storing contact data.
+Enhance the UI with more interactive features.
